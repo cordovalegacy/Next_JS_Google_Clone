@@ -10,6 +10,7 @@ var randomWords = require('random-words');
 export default function Home() { //active:ring a is cool effect on buttons
 
   const [googleSearch, setGoogleSearch] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
   const submitHandler = (e) => {
@@ -20,10 +21,12 @@ export default function Home() { //active:ring a is cool effect on buttons
     router.push(`/search/web?searchTerm=${googleSearch}`) //adds the path to the domain of the site (google.com)
   }
 
-  const randomSearch = async () => {
+  const randomSearch = async () => { //grabs a random word from random-words package
+    setIsLoading(true)
     const response = await randomWords()
     if(!response) return
     router.push(`/search/web?searchTerm=${response}`)
+    setIsLoading(false)
   }
 
   return (
@@ -67,9 +70,10 @@ export default function Home() { //active:ring a is cool effect on buttons
             onClick={submitHandler}
           >Google Search!</button>
           <button
-            className="btn"
+            className={`${!isLoading ? "btn" : "opacity-50 hover:shadow-none cursor-not-allowed"}`}
+            disabled={isLoading}
             onClick={randomSearch}
-          >Feelin' Lucky?</button>
+          >{!isLoading ? "Feelin' Lucky?" : <Image width={60} height={60} src="/google_loading.svg" alt="loading" />}</button>
         </div>
       </main>
     </>
