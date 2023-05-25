@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply bg-slate-50 hover:shadow-sm hover:shadow-gray-600 transition duration-150 rounded hover:bg-slate-100 active:bg-transparent text-sm border-none active:ring-2 p-2 active:ring-blue-500 text-gray-800
+    }
+}
