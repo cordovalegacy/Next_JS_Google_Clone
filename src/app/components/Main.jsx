@@ -19,7 +19,7 @@ const Main = ({ Search, submitHandler, googleSearch, setGoogleSearch, isLoading,
                 />
                 <input
                     type="text"
-                    className="w-full pl-10 pr-14 py-2 rounded-full border border-gray-200 hover:shadow-md shadow-gray-600 bg-white"
+                    className="w-full outline-none pl-10 pr-14 py-2 rounded-full border shadow-gray-300 shadow-sm border-gray-200 hover:shadow-md hover:shadow-gray-600 bg-white"
                     placeholder="Search Google or type a URL"
                     onChange={(e) => setGoogleSearch(e.target.value)}
                     value={googleSearch}

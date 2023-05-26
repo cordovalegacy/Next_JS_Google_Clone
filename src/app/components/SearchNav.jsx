@@ -9,6 +9,7 @@ import { useState } from "react"
 import { BsSearch as Search } from 'react-icons/bs'
 import { useSearchParams } from "next/navigation"
 import { useRouter } from "next/navigation"
+import SearchNavOptions from "./SearchNavOptions"
 
 
 const SearchNav = () => {
@@ -53,6 +54,7 @@ const SearchNav = () => {
                     <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:brightness-110 hover:shadow-md transition duration-150">Sign In</button>
                 </div>
             </header>
+            <SearchNavOptions />
         </nav>
     )
 }

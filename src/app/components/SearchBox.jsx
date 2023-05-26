@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 
-const SearchBox = ({ googleSearch, setGoogleSearch, submitHandler, Search, searchParams, searchTerm }) => {
+const SearchBox = ({ googleSearch, setGoogleSearch, submitHandler, Search }) => {
 
     return (
         <form onSubmit={submitHandler} className="relative mx-auto w-3/5">
@@ -11,7 +11,7 @@ const SearchBox = ({ googleSearch, setGoogleSearch, submitHandler, Search, searc
             />
             <input
                 type="text"
-                className="w-full pl-5 pr-14 py-2 rounded-full border border-gray-200 hover:shadow-md shadow-gray-600 bg-white"
+                className="w-full pl-5 pr-14 py-3 outline-none rounded-full border shadow-sm shadow-gray-300 border-gray-200 hover:shadow-md hover:shadow-gray-400 bg-white"
                 placeholder="Search Google or type a URL"
                 onChange={(e) => setGoogleSearch(e.target.value)}
                 value={googleSearch}
