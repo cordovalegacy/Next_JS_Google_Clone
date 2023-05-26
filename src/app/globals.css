@@ -6,4 +6,8 @@
     .btn {
         @apply bg-slate-50 hover:shadow-sm hover:shadow-gray-600 transition duration-150 rounded hover:bg-slate-100 active:bg-transparent text-sm border-none active:ring-2 p-2 active:ring-blue-500 text-gray-800
     }
+
+    .header-icon{
+        @apply bg-transparent hover:bg-slate-200 p-2 text-4xl rounded-full cursor-pointer
+    }
 }
