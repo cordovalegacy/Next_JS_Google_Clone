@@ -1,4 +1,4 @@
-
+// !this component is used in the search/layout.jsx file as {children}
 
 const ImageSearch = () => {
     return(

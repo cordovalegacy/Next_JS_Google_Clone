@@ -1,31 +1,32 @@
+// !this component is used in the search/layout.jsx file
 "use client"
 
-import Image from "next/image"
-import Link from "next/link"
-import SearchBox from "./SearchBox"
-import { RiSettings3Line as Settings } from 'react-icons/ri'
-import { TbGridDots as Grid } from 'react-icons/tb'
-import { useState } from "react"
-import { BsSearch as Search } from 'react-icons/bs'
-import { useSearchParams } from "next/navigation"
-import { useRouter } from "next/navigation"
-import { usePathname } from "next/navigation"
-import SearchNavOptions from "./SearchNavOptions"
+import Image from "next/image" //nextjs Image function
+import Link from "next/link" //nextjs anchor tag for SPA
+import SearchBox from "./SearchBox" //non-home-page search bar w/functionality
+import SearchNavOptions from "./SearchNavOptions" //search bar sub nav, configures search type (web or images) 
+import { RiSettings3Line as Settings } from 'react-icons/ri' //settings icon
+import { TbGridDots as Grid } from 'react-icons/tb'//grid icon
+import { useState } from "react" //used to track google search
+import { BsSearch as Search } from 'react-icons/bs' //search icon
+import { useSearchParams } from "next/navigation" //configured to grab path params (?searchTerm=param)
+import { useRouter } from "next/navigation" //used to push new routes (like navigate from react-router)
+import { usePathname } from "next/navigation" //gets current path name (not including params)
 
-
+//SearchNav is the active search page alternative to the home search page (user goes here when home search happens)
 const SearchNav = () => {
 
-    const router = useRouter()
-    const pathname = usePathname()
-    const searchParams = useSearchParams()
-    const searchTerm = searchParams.get("searchTerm")
-    const [googleSearch, setGoogleSearch] = useState(searchTerm || "")
+    const router = useRouter() //like navigate
+    const pathname = usePathname() //current path
+    const searchParams = useSearchParams() //current params
+    const searchTerm = searchParams.get("searchTerm") //searchTerm default and function
+    const [googleSearch, setGoogleSearch] = useState(searchTerm || "") //initial value of searchTerm
 
-    const selectTab = (tabIdx) => {
+    const selectTab = (tabIdx) => { //two tabs to choose from: images or web
         router.push(`/search/${tabIdx === "Images" ? "image": "web"}?searchTerm=${searchTerm}`)
     } 
 
-    const submitHandler = (e) => {
+    const submitHandler = (e) => { //handles search submission if valid
         e.preventDefault()
         if (!googleSearch.trim() /* trim eliminates trailing and leading whitespaces */) {
           return //block empty submission

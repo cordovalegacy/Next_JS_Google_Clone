@@ -1,7 +1,9 @@
+// !this component is used in the root page.jsx file
 "use client"
 
-import Image from "next/image"
+import Image from "next/image" //Image function, takes in parameters ("attributes")
 
+//Main component holds home functionality (search, random button, loading effect)
 const Main = ({ Search, submitHandler, googleSearch, setGoogleSearch, isLoading, randomSearch }) => {
     return (
         <main className="w-full p-5 my-12 space-y-8">

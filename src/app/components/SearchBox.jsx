@@ -1,6 +1,8 @@
+// !this component is used in the SearchNav.jsx file
 "use client"
-import Image from "next/image"
+import Image from "next/image" //nextjs built in image function
 
+//SearchBox component is the NON-home-page search bar mounted to the top
 const SearchBox = ({ googleSearch, setGoogleSearch, submitHandler, Search }) => {
 
     return (

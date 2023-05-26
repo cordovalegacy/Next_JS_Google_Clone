@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { TbGridDots } from 'react-icons/tb'
+// !this component is used in the root page.jsx file
+import Link from "next/link" //nextjs anchor tag for SPA
+import { TbGridDots } from 'react-icons/tb' //grid icon
 
 const Nav = () => {
     return (
