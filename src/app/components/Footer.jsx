@@ -4,7 +4,7 @@ import Link from "next/link" //a tag configured for SPA
 
 const Footer = () => { //fixed to bottom of page
     return (
-        <footer className="bg-slate-50 h-16 text-gray-700 text-sm w-full absolute bottom-0 left-0 tracking-wider">
+        <footer className="bg-slate-50 h-16 text-gray-700 text-sm w-full fixed bottom-0 left-0 tracking-wider">
             <div className="border-b-2 flex items-center w-full justify-center h-1/2">
                 <Country/>
             </div>

@@ -51,8 +51,6 @@ const SearchNav = () => {
                         setGoogleSearch={setGoogleSearch}
                         submitHandler={submitHandler}
                         Search={Search}
-                        searchParams={searchParams}
-                        searchTerm={searchTerm}
                     />
                 </div>
                 <div className="flex items-center justify-evenly w-1/6">
