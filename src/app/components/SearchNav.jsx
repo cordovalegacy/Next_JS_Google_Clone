@@ -31,8 +31,11 @@ const SearchNav = () => {
         if (!googleSearch.trim() /* trim eliminates trailing and leading whitespaces */) {
           return //block empty submission
         }
-        router.push(`/search/web?searchTerm=${googleSearch}`) //adds the path to the domain of the site (google.com)
-      }
+        console.log("Pathname---->", pathname)
+        pathname === '/search/web' ? //checking current path
+        router.push(`/search/web?searchTerm=${googleSearch}`): //if path is web, look for web
+        router.push(`/search/image?searchTerm=${googleSearch}`) //if path is image, look for images
+    }
 
     return (
         <nav className="sticky-top-0">

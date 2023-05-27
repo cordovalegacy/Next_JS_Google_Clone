@@ -1,4 +1,4 @@
-
+import Link from "next/link"
 
 const ImageSearchResults = ({ data }) => {
 
@@ -12,11 +12,6 @@ const ImageSearchResults = ({ data }) => {
             <div className="flex flex-col gap-5 w-4/5">
                 {data.items.map((res) => (
                     <div key={res.link}>
-                        <Link
-                            href={res.link}
-                            className="text-sm"
-                        >{res.formattedUrl}
-                        </Link>
                         <Link
                             href={res.link}
                             className="text-sm"
