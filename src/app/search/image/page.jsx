@@ -7,7 +7,7 @@ import Link from "next/link"
 const ImageSearch = async ({ searchParams }) => {
     console.log("Search Parameters ---->", searchParams)
 
-    const query = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.IMAGE_KEY}&q=${searchParams.searchTerm}`
+    const query = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.IMAGE_KEY}&q=${searchParams.searchTerm}&searchType=image`
     const options = {
         method: 'GET',
         headers: {
