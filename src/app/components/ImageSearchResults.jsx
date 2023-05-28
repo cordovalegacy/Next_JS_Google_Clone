@@ -13,10 +13,10 @@ const ImageSearchResults = ({ data }) => {
             <div className="flex flex-wrap gap-5 w-full">
                 {data.items.map((res) => (
                     <div key={res.link} className="flex flex-col gap-2 w-[18%] hover:scale-105 transition duration-150">
-                        <Link href={res.link}>
+                        <Link href={res.image.contextLink}>
                             <img
                             className="w-60 h-40 rounded-lg shadow-md hover:shadow-lg hover:shadow-gray-600 shadow-gray-400" 
-                            src={res?.image?.thumbnailLink}
+                            src={res?.link}
                             alt={res.title}
                             />
                         </Link>
