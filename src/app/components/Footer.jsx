@@ -5,10 +5,18 @@ import Link from "next/link" //a tag configured for SPA
 const Footer = () => { //fixed to bottom of page
     return (
         <footer className="bg-slate-50 h-16 text-gray-700 text-sm w-full fixed bottom-0 left-0 tracking-wider">
-            <div className="border-b-2 flex items-center w-full justify-center h-1/2">
+            <div className="lg:border-b-2 flex items-center w-full justify-center sm:h-full lg:h-1/2">
                 <Country/>
             </div>
-            <div className="flex items-center justify-evenly h-1/2">
+            <div className="flex-1 flex items-center justify-evenly lg:hidden sm:flex">
+                    <h3>
+                        Website -
+                        <Link
+                            className="text-blue-700 hover:underline underline-offset-2 decoration-gray-700"
+                            href={'https://www.linkedin.com/in/brendan-cordova-2874011ba/'}> Brendan Cordova</Link>
+                    </h3>
+                </div>
+            <div className="lg:flex sm:text-sm sm:hidden items-center justify-evenly h-1/2 hidden">
                 <div className="flex-1 flex items-center justify-evenly">
                     <Link
                         className="hover:underline underline-offset-2 decoration-gray-700"

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import PaganationButtons from "./PaganationButtons"
 
 const ImageSearchResults = ({ data }) => {
 
@@ -12,10 +13,10 @@ const ImageSearchResults = ({ data }) => {
             </p>
             <div className="flex flex-wrap gap-5 w-full">
                 {data.items.map((res) => (
-                    <div key={res.link} className="flex flex-col gap-2 w-[18%] hover:scale-105 transition duration-150">
+                    <div key={res.link} className="flex flex-col gap-3 mb-10 lg:w-[23.6%] md:w-[40%] sm:w-[25%] hover:scale-105 transition duration-150">
                         <Link href={res.image.contextLink}>
                             <img
-                            className="w-60 h-40 rounded-lg shadow-md hover:shadow-lg hover:shadow-gray-600 shadow-gray-400" 
+                            className="lg:w-80 md:w-60 sm:w-40 lg:h-60 md:h-40 sm:h-20 rounded-lg shadow-md hover:shadow-lg hover:shadow-gray-600 shadow-gray-400" 
                             src={res?.link}
                             alt={res.title}
                             />
@@ -30,6 +31,9 @@ const ImageSearchResults = ({ data }) => {
                         </Link>
                     </div>
                 ))}
+            </div>
+            <div className="flex justify-end items-center">
+                <PaganationButtons />
             </div>
         </div>
     )
