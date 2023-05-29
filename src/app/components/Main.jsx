@@ -36,7 +36,7 @@ const Main = ({ Search, submitHandler, googleSearch, setGoogleSearch, isLoading,
                     />
                 </div>
             </form>
-            <div className="flex items-center justify-evenly mx-auto w-2/5 px-5">
+            <div className="flex items-center justify-evenly mx-auto sm:w-3/5 md:w-2/5 lg:w-2/5 px-5 sm:gap-5 md:gap-0 lg:gap-0">
                 <button
                     className="btn"
                     onClick={submitHandler}

@@ -47,6 +47,7 @@ const SearchNav = () => {
                             height={40}
                             src={'/google_logo.svg'}
                             alt="google logo"
+                            className="min-w-[100px]"
                         />
                     </Link>
                     <SearchBox 
@@ -56,7 +57,7 @@ const SearchNav = () => {
                         Search={Search}
                     />
                 </div>
-                <div className="flex items-center justify-evenly w-1/6">
+                <div className="flex items-center justify-evenly w-1/6 min-w-max ml-8">
                     <Settings className="header-icon hidden md:inline-flex" />
                     <Grid className="header-icon hidden md:inline-flex" />
                     <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:brightness-110 hover:shadow-md transition duration-150">Sign In</button>

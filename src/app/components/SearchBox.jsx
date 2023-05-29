@@ -6,14 +6,14 @@ import Image from "next/image" //nextjs built in image function
 const SearchBox = ({ googleSearch, setGoogleSearch, submitHandler, Search }) => {
 
     return (
-        <form onSubmit={submitHandler} className="relative mx-auto w-3/5">
+        <form onSubmit={submitHandler} className="relative mx-auto w-3/5 min-w-[150px]">
             <Search
                 className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 cursor-pointer"
                 onClick={submitHandler}
             />
             <input
                 type="text"
-                className="w-full pl-5 pr-14 py-3 outline-none rounded-full border shadow-sm shadow-gray-300 border-gray-200 hover:shadow-md hover:shadow-gray-400 bg-white"
+                className="w-full ml-4 pl-5 pr-14 py-3 outline-none rounded-full border shadow-sm shadow-gray-300 border-gray-200 hover:shadow-md hover:shadow-gray-400 bg-white"
                 placeholder="Search Google or type a URL"
                 onChange={(e) => setGoogleSearch(e.target.value)}
                 value={googleSearch}

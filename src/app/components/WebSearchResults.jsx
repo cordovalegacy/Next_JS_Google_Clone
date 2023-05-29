@@ -1,4 +1,5 @@
 import Link from "next/link"
+import PaganationButtons from "./PaganationButtons"
 
 const WebSearchResults = ({ data }) => {
 
@@ -24,6 +25,7 @@ const WebSearchResults = ({ data }) => {
                     </div>
                 ))}
             </div>
+            <PaganationButtons />
         </div>
     )
 }
