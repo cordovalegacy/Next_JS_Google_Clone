@@ -31,7 +31,7 @@ const PaganationButtons = () => {
     }
 
     return (
-        <div className="flex items-center justify-between w-3/4 my-10 text-lg sm:text-md cursor-pointer">
+        <div className="flex items-center justify-between w-3/4 my-10 text-lg sm:text-md">
             {startIndex >= 10 && (
                 <div
                     className={`flex items-center gap-1 hover:text-blue-900 text-gray-800 transition-transform duration-300 ${isPrevHovered ? "hover:translate-x-[-10px]" : ""
@@ -44,24 +44,26 @@ const PaganationButtons = () => {
                         className="flex items-center"
                     >
                         <GrLinkPrevious />
-                        <p className="hover:text-blue-900">| Prev</p>
+                        <p className="hover:text-blue-900 cursor-pointer">| Prev</p>
                     </Link>
                 </div>
             )}
-            <div
-                className={`flex items-center gap-1 hover:text-blue-900 text-gray-800 transition-transform duration-300 ${isNextHovered ? "hover:translate-x-[10px]" : ""
-                    }`}
-                onMouseEnter={handleNextHover}
-                onMouseLeave={handleNextLeave}
-            >
-                <Link
-                    href={`${pathname}?searchTerm=${searchTerm}&start=${startIndex + 10}`}
-                    className="flex items-center"
+            {startIndex <= 90 && (
+                <div
+                    className={`flex items-center gap-1 hover:text-blue-900 text-gray-800 transition-transform duration-300 ${isNextHovered ? "hover:translate-x-[10px]" : ""
+                        }`}
+                    onMouseEnter={handleNextHover}
+                    onMouseLeave={handleNextLeave}
                 >
-                <p className="hover:text-blue-900">Next |</p>
-                    <GrLinkNext />
-                </Link>
-            </div>
+                    <Link
+                        href={`${pathname}?searchTerm=${searchTerm}&start=${startIndex + 10}`}
+                        className="flex items-center"
+                    >
+                        <p className="hover:text-blue-900 cursor-pointer">Next |</p>
+                        <GrLinkNext />
+                    </Link>
+                </div>
+            )}
         </div>
     )
 }

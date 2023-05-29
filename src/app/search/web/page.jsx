@@ -6,7 +6,8 @@ import Link from "next/link"
 const WebSearch = async ({ searchParams }) => { //search params grab current url data
     console.log("Search Parameters ---->",searchParams)
 
-    const query = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}`
+    const startIndex = searchParams.start || "1"
+    const query = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}&start=${startIndex}`
     const options = {
         method: 'GET',
         headers: {
