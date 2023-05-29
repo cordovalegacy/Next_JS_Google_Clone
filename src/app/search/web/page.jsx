@@ -14,6 +14,7 @@ const WebSearch = async ({ searchParams }) => { //search params grab current url
             accept: 'application/json',
         }
     }
+    await new Promise((resolve) => setTimeout(resolve, 2000))
     const res = await fetch(query, options)
 
     if (!res.ok) {

@@ -60,7 +60,6 @@ const SearchNav = () => {
                 <div className="flex items-center justify-evenly w-1/6 min-w-max ml-8">
                     <Settings className="header-icon hidden md:inline-flex" />
                     <Grid className="header-icon hidden md:inline-flex" />
-                    <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:brightness-110 hover:shadow-md transition duration-150">Sign In</button>
                 </div>
             </header>
             <SearchNavOptions Search={Search} pathname={pathname} selectTab={selectTab} />

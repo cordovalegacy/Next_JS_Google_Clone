@@ -41,9 +41,10 @@ const PaganationButtons = () => {
     }
     //! Animation function
 
+    //!calls on the url that grabs the previous 10 results from the start params
     return (
         <div className="flex items-center justify-between w-3/4 my-10 text-lg sm:text-md">
-            //!calls on the url that grabs the previous 10 results from the start params
+            
             {startIndex >= 10 && (
                 <div
                     className={`flex items-center gap-1 hover:text-blue-900 text-gray-800 transition-transform duration-300 ${isPrevHovered ? "hover:translate-x-[-10px]" : ""

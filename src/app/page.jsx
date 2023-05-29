@@ -7,8 +7,21 @@ import { BsSearch as Search } from 'react-icons/bs' //search icon
 import { useState } from "react"
 import { useRouter } from "next/navigation" //like navigate from react router
 var randomWords = require('random-words') //random word function (dependency)
+import { SessionProvider } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
 
-export default function Home() { //active:ring a is cool effect on buttons
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  return {
+    props: {
+      session,
+    },
+  };
+}
+
+
+export default function Home({ session }) { //active:ring a is cool effect on buttons
 
   const [googleSearch, setGoogleSearch] = useState("") //handles state for home search bar
   const [isLoading, setIsLoading] = useState(false) //handles loading icon state
@@ -31,7 +44,7 @@ export default function Home() { //active:ring a is cool effect on buttons
   }
 
   return (
-    <>
+    <SessionProvider session={session}>
       <Nav />
       <Main
         Search={Search}
@@ -41,6 +54,6 @@ export default function Home() { //active:ring a is cool effect on buttons
         isLoading={isLoading}
         randomSearch={randomSearch}
       />
-    </>
+    </SessionProvider>
   )
 }
