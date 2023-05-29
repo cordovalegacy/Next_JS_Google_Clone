@@ -4,11 +4,13 @@
 import ImageSearchResults from "@/app/components/ImageSearchResults"
 import Link from "next/link"
 
-const ImageSearch = async ({ searchParams }) => {
+const ImageSearch = async ({ searchParams }) => { //* nextjs allows async components
     console.log("Search Parameters ---->", searchParams)
 
-    const startIndex = searchParams.start || "1"
+    const startIndex = searchParams.start || "1" //? this grabs the start param value in the url or sets to 1 
+    //todo plug query into fetch 
     const query = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.IMAGE_KEY}&q=${searchParams.searchTerm}&searchType=image&start=${startIndex}`
+    //todo plug options into fetch
     const options = {
         method: 'GET',
         headers: {

@@ -1,7 +1,7 @@
 // !this component is used in searchNav.jsx file
 "use client"
 
-//SearchNavOptions allows us to select a tab, and configures searchTerm accordingly
+//!SearchNavOptions allows us to select a tab, and configures searchTerm accordingly
 const SearchNavOptions = ({ Search, pathname, selectTab }) => {
     return(
         <div className="flex items-center gap-6 px-8 lg:pl-52 border-b-2 justify-center border-slate-200 lg:justify-start">
